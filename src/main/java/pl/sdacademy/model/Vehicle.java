@@ -1,11 +1,11 @@
 package pl.sdacademy.model;
 
-public class Vehicle {
+public class Vehicle implements Comparable<Vehicle>{
 
 	public String engine;
 	private int wheelsAmount;
 	double weight;
-	
+	String name;
 	
 	public Vehicle() {
 	
@@ -49,4 +49,16 @@ public class Vehicle {
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [weight=" + weight + ", name=" + name + "]";
+	}
+
+	@Override
+	public int compareTo(Vehicle pojazdDoPorownania) {
+		return Double.compare(this.getWeight(), pojazdDoPorownania.getWeight());
+	}
+	
+	
 }

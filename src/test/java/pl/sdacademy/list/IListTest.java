@@ -59,7 +59,7 @@ public class IListTest {
 	
 	@Test
 	public void shouldReturnNullIfThereAreNoElements() {
-		if (pustaListaLaptopow.getFirst().equals(null)) {
+		if (pustaListaLaptopow.isEmpty()) {
 			result = true;
 		}
 		assertTrue(result);

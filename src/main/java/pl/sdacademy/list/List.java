@@ -47,8 +47,16 @@ public class List<T> implements IList<T> {
 	}
 
 	@Override
-	public void add(T element) {
-
+	public void add(T wartosc) {
+		ListElement<T> dodawanyElement = new ListElement<T>(wartosc);
+		if (isEmpty()) {
+			pierwszyElement = dodawanyElement;
+			ostatniElement = pierwszyElement;
+		} else {
+			ostatniElement.zaczepZTylu = dodawanyElement;
+			dodawanyElement.zaczepZPrzodu = ostatniElement;
+			ostatniElement = dodawanyElement;
+		}
 	}
 
 	@Override
@@ -57,7 +65,7 @@ public class List<T> implements IList<T> {
 		ListElement<T> elementPrzed = elementDoUsuniecia.getPrevious();
 		ListElement<T> elementPo = elementDoUsuniecia.getNext();
 		elementPrzed.zaczepZPrzodu = elementPo;
-		
+
 	}
 
 	@Override

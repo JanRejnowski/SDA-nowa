@@ -15,4 +15,6 @@ public interface IList<T> extends Iterable<T> {
 	int size();
 	
 	boolean isEmpty();
+	
+	ListElement<T> getElement(int index);
 }
